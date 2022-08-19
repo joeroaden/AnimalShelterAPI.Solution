@@ -79,7 +79,7 @@ _The user can use GET, POST, PUT and DELETE to add, update or remove animals fro
 
 ## Using Swagger Documentation
 
-To explore HousePlant API with Swagger/Swashbuckle, launch the project using `dotnet run` with the Terminal or Powershell, and input the following URL into your browser: `https://localhost:5001/index.html`
+To explore AnimalShelter API with Swagger/Swashbuckle, launch the project using `dotnet run` with the Terminal or Powershell, and input the following URL into your browser: `https://localhost:5001/index.html`
 
 ## Using the JSON Web Token
 
