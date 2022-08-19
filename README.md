@@ -8,8 +8,8 @@
 ## Table of Contents
 [Technologies Used](#technologies-used)  
 [Description](#description)  
-[Setup/Installation Requirements](#setup-and-installation-requirements)
-[API Documentation](#api-documentation)
+[Setup/Installation Requirements](#setup-and-installation-requirements) 
+[API Documentation](#api-documentation) 
 [Known Bugs](#known-bugs)  
 [License](#License)
 
@@ -28,7 +28,7 @@
 ---
 ## Description
 
-_The user can use GET, POST, PUT and DELETE to add, update or remove animals from the database.  User can also run application on live server using Swagger_
+_The user can perform GET, POST, PUT and DELETE to add, update or remove animals from the database.  User can also run application on live server using Swagger_
 
 ---
 ## Setup and Installation Requirements
@@ -71,7 +71,7 @@ _The user can use GET, POST, PUT and DELETE to add, update or remove animals fro
    └── <strong>AnimalShelter</strong></pre>
 
 2. Run `$ dotnet restore` in the console.  
-3. Run `$ dotnet database update` in the console.  
+3. Run `$ dotnet ef database update` in the console.  
 4. Run `$ dotnet run` in the console
 </details><br>
 
@@ -112,7 +112,7 @@ https://localhost:5000/api/animals/1
 ## Sample JSON Response
 
 [\
-    "{
+    {
     "animalId": 1,\
     "name": "Franny",\
     "species": "Dog",\
@@ -124,7 +124,8 @@ https://localhost:5000/api/animals/1
 | Parameter | Type | Default | Required | Description |
 | :---: | :---: | :---: | :---: | --- |
 | name | string | none | true | Return matches by name.
-| species| string | none | true | Return search by species.| age | int | none | true | Return matches by age or  age range.
+| species| string | none | true | Return search by species.
+| age | int | none | true | Return matches by age or  age range.
 
 ## Example Query
 localhost:5000/api/animals?name=franny
@@ -132,13 +133,13 @@ localhost:5000/api/animals?name=franny
 ## Sample JSON Response
 [\
     {\
-        "{
+        {
     "animalId": 1,\
     "name": "Franny",\
     "species": "Dog",\
     "age": 8\
     }\
-]\
+]
 
 
 This program was built using *`Microsoft .NET SDK 5.0.401`*, and may not be compatible with other versions. Your milage may vary.
@@ -153,7 +154,7 @@ This program was built using *`Microsoft .NET SDK 5.0.401`*, and may not be comp
 
 
 
-[Copyright](/LICENSE) © 2022 Zhibin Liang, Joe Roaden, and Mo Byrne
+[Copyright](/LICENSE) © 2022 Joe Roaden
 
 ---
 ### Footnotes
