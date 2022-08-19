@@ -147,7 +147,7 @@ This program was built using *`Microsoft .NET SDK 5.0.401`*, and may not be comp
 ---
 ## Known Bugs
 
-* Any known bugs
+* Cannot implement JSON Web Tokens at this time.  The Files are in the project but I cannot troubleshoot my issue
 
 ---
 ## License
