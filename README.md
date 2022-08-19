@@ -8,7 +8,7 @@
 ## Table of Contents
 [Technologies Used](#technologies-used)  
 [Description](#description)  
-[Setup/Installation Requirements](#setup-and-installation-requirements) 
+[Setup/Installation Requirements](#setup-and-installation-requirements)   
 [API Documentation](#api-documentation) 
 [Known Bugs](#known-bugs)  
 [License](#License)
@@ -117,7 +117,7 @@ https://localhost:5000/api/animals/1
     "name": "Franny",\
     "species": "Dog",\
     "age": 8\
-}
+}\
 ]\
 
 ## Path Parameters
@@ -133,7 +133,7 @@ localhost:5000/api/animals?name=franny
 ## Sample JSON Response
 [\
     {\
-        {
+        
     "animalId": 1,\
     "name": "Franny",\
     "species": "Dog",\
