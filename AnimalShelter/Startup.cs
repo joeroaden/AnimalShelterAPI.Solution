@@ -19,6 +19,7 @@ using System.IO;
 using System.Reflection;
 using AnimalShelter.Configuration;
 using System.Text;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore.Design;
@@ -65,9 +66,9 @@ namespace AnimalShelter
             });
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                      .AddEntityFrameworkStores<MessageBoardContext>();
+                      .AddEntityFrameworkStores<AnimalShelterContext>();
 
-            services.AddDbContext<MessageBoardContext>(opt =>
+            services.AddDbContext<AnimalShelterContext>(opt =>
                 opt.UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
             services.AddControllers();
             
@@ -169,7 +170,7 @@ namespace AnimalShelter
             // });
 
             // custom jwt auth middleware
-            app.UseMiddleware<JwtMiddleware>();
+            // app.UseMiddleware<JwtMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {
