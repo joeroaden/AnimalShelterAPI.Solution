@@ -17,6 +17,12 @@ using AnimalShelter.Helpers;
 using AnimalShelter.Services;
 using System.IO;
 using System.Reflection;
+using AnimalShelter.Configuration;
+using System.Text;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.IdentityModel.Tokens;
 
 namespace AnimalShelter
 {
@@ -34,6 +40,38 @@ namespace AnimalShelter
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<JwtConfig>(Configuration.GetSection("JwtConfig"));
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(jwt =>
+            {
+                var key = Encoding.ASCII.GetBytes(Configuration["JwtConfig:Secret"]);
+
+                jwt.SaveToken = true;
+                jwt.TokenValidationParameters = new TokenValidationParameters
+                {
+                ValidateIssuerSigningKey = true, // this will validate the 3rd part of the jwt token using the secret that we added in the appsettings and verify we have generated the jwt token
+                IssuerSigningKey = new SymmetricSecurityKey(key), // Add the secret key to our Jwt encryption
+                ValidateIssuer = false,
+                ValidateAudience = false,
+                RequireExpirationTime = false,
+                ValidateLifetime = true
+                };
+            });
+
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                      .AddEntityFrameworkStores<MessageBoardContext>();
+
+            services.AddDbContext<MessageBoardContext>(opt =>
+                opt.UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
+            services.AddControllers();
+            
+            
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(
@@ -119,6 +157,8 @@ namespace AnimalShelter
             // app.UseCors();
             
             app.UseAuthorization();
+
+            app.UseAuthentication();
 
             //  global cors policy
             // app.UseCors(x => 
