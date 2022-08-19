@@ -83,7 +83,7 @@ To explore AnimalShelter API with Swagger UI in the browser via the localhost, l
 
 Click the link titled `http://localhost:5000/swagger/v1/swagger.json` to view Specifications within the terminal and documentation specific to this API
 
-<!-- ## Using the JSON Web Token
+## Using the JSON Web Token
 
 In order to be authorized to use the POST, PUT, DELETE functionality of the API, please authenticate yourself through Postman._
 
@@ -93,7 +93,7 @@ Add the following query to the request as raw JSON data in the Body tab:
     "UserName": "test",\
     "Password": "test"\
 }\
-The token will be generated in the response. Copy and paste it as the Token paramenter in the Authorization tab. -->
+The token will be generated in the response. Copy and paste it as the Token paramenter in the Authorization tab.
 
 ## Endpoints
 
