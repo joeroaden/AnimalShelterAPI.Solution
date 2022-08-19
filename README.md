@@ -2,7 +2,7 @@
 
 #### By _Joe Roaden_
 
-#### _Brief description of application_
+#### _An MVC API Application that uses MySQLWorkbench to track animals for an animal shelter_
 
 ---
 ## Table of Contents
@@ -28,7 +28,7 @@
 ---
 ## Description
 
-_This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have._
+_The user can use GET, POST, PUT and DELETE to add, update or remove animals from the database.  User can also run application on live server using Swagger_
 
 ---
 ## Setup and Installation Requirements
@@ -98,56 +98,43 @@ The token will be generated in the response. Copy and paste it as the Token para
 Base URL: https://localhost:5000
 
 ## HTTP Request Structure
-* GET /api/plants
-* POST /api/plants
-* GET /api/plants/{id}
-* PUT /api/plants/{id}
-* DELETE /api/plants/{id}
+* GET /api/animals
+* POST /api/animals
+* GET /api/animals/{id}
+* PUT /api/animals/{id}
+* DELETE /api/animals/{id}
 
 Example Query
-https://localhost:5000/api/plants/1
+https://localhost:5000/api/animals/1
 
 ## Sample JSON Response
 
-{\
-    "plantId": 1,\
-    "name": "AGAVE PLANT",\
-    "commonName": "AGAVE",\
-    "description": "An agave plant comes in all different sizes and shapes; some are extremely  large and belong growing outside while the smaller varieties make perfect indoor potted houseplants. Agave plants are succulents with multi-layered rosettes of thick, fleshy, leaves. The short, thick stem is often hidden by the large, leathery leaves. If there are children and pets in the house, avoid purchasing agave plants that have sharp, pointed leaves with spiny margins. The sap in the agave leaves is very irritating and the spines and sharp points are painful if they puncture your skin. It takes many, many years for an agave plant to flower, especially when grown indoors. Some varieties may eventually produce a very tall stalk with clusters of flowers at the top. You may not want your agave plant to bloom since, strangely, they often die after flowering.",\
-    "type": "Earth",\
-    "sunlight": "bright light",\
-    "water": "every 2-3 weeks",\
-    "humidity": "drought resistance",\
-    "soil": "succulent potting soil",\
-    "propagation": "Offset",\
-    "tempMin": 65,\
-    "tempMax": 80\
-}\
+[\
+    "{
+    "animalId": 1,\
+    "name": "Franny",\
+    "species": "Dog",\
+    "age": 8\
+}
+]\
 
 ## Path Parameters
 | Parameter | Type | Default | Required | Description |
 | :---: | :---: | :---: | :---: | --- |
 | name | string | none | true | Return matches by name.
-| common name | string | none | true | Return matches by name.| description | string | none | true | Return matches by description.
+| species| string | none | true | Return search by species.| age | int | none | true | Return matches by age or  age range.
 
 ## Example Query
-http://localhost:5000/api/plants?commonName=agave
+localhost:5000/api/animals?name=franny
 
 ## Sample JSON Response
 [\
     {\
-        "plantId": 1,\
-        "name": "AGAVE PLANT",\
-        "commonName": "AGAVE",\
-        "description": "An agave plant comes in all different sizes and shapes; some are extremely  large and belong growing outside while the smaller varieties make perfect indoor potted houseplants. Agave plants are succulents with multi-layered rosettes of thick, fleshy, leaves. The short, thick stem is often hidden by the large, leathery leaves. If there are children and pets in the house, avoid purchasing agave plants that have sharp, pointed leaves with spiny margins. The sap in the agave leaves is very irritating and the spines and sharp points are painful if they puncture your skin. It takes many, many years for an agave plant to flower, especially when grown indoors. Some varieties may eventually produce a very tall stalk with clusters of flowers at the top. You may not want your agave plant to bloom since, strangely, they often die after flowering.",\
-        "type": "Earth",\
-        "sunlight": "bright light",\
-        "water": "every 2-3 weeks",\
-        "humidity": "drought resistance",\
-        "soil": "succulent potting soil",\
-        "propagation": "Offset",\
-        "tempMin": 65,\
-        "tempMax": 80\
+        "{
+    "animalId": 1,\
+    "name": "Franny",\
+    "species": "Dog",\
+    "age": 8\
     }\
 ]\
 

@@ -11,16 +11,16 @@ namespace AnimalShelter.Models
 
         public DbSet<Animal> Animals { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder builder)
-{
-  builder.Entity<Animal>()
-      .HasData(
-          new Animal { AnimalId = 1, Name = "Daisy", Species = "Dog", Age = 1},
-          new Animal { AnimalId = 2, Name = "Spot", Species = "Cat", Age = 2},
-          new Animal { AnimalId = 3, Name = "Max", Species = "Dog", Age = 3},
-          new Animal { AnimalId = 4, Name = "Pepper", Species = "Dog", Age = 4},
-          new Animal { AnimalId = 5, Name = "Penelope", Species = "Cat", Age = 15}
-      );
-}
+        // protected override void OnModelCreating(ModelBuilder builder)
+        // {
+        //   builder.Entity<Animal>()
+        //       .HasData(
+        //           new Animal { AnimalId = 1, Name = "Daisy", Species = "Dog", Age = 1},
+        //           new Animal { AnimalId = 2, Name = "Spot", Species = "Cat", Age = 2},
+        //           new Animal { AnimalId = 3, Name = "Max", Species = "Dog", Age = 3},
+        //           new Animal { AnimalId = 4, Name = "Pepper", Species = "Dog", Age = 4},
+        //           new Animal { AnimalId = 5, Name = "Penelope", Species = "Cat", Age = 15}
+        //       );
+        // }
     }
 }
