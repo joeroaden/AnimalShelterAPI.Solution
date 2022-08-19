@@ -79,7 +79,7 @@ _The user can perform GET, POST, PUT and DELETE to add, update or remove animals
 
 ## Using Swagger Documentation
 
-To explore AnimalShelter API with Swagger UI in the browser via the localhost, launch the project using `dotnet run` with the Terminal or Powershell, and input the following URL into your browser: `http://localhost:5000/index.html`
+To explore AnimalShelter API with Swagger UI in the browser via the localhost, launch the project using `dotnet run` with the Terminal or Powershell, and input the following URL into your browser: `http://localhost:5000/index.html` or `http://localhost:5000`
 
 Click the link titled `http://localhost:5000/swagger/v1/swagger.json` to view Specifications within the terminal and documentation specific to this API
 
@@ -88,7 +88,7 @@ Click the link titled `http://localhost:5000/swagger/v1/swagger.json` to view Sp
 In order to be authorized to use the POST, PUT, DELETE functionality of the API, please authenticate yourself through Postman._
 
 Open Postman and create a POST request using the URL: `http://localhost:5000/api/users/authenticate`
-Add the following query to the request as raw data in the Body tab:
+Add the following query to the request as raw JSON data in the Body tab:
 {\
     "UserName": "test",\
     "Password": "test"\

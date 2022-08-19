@@ -13,6 +13,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using AnimalShelter.Models;
 using Microsoft.EntityFrameworkCore;
+using AnimalShelter.Helpers;
+using AnimalShelter.Services;
 using System.IO;
 using System.Reflection;
 
@@ -47,8 +49,8 @@ namespace AnimalShelter
             services.AddDbContext<AnimalShelterContext>(opt =>
                 opt.UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
             services.AddControllers();
-            // services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
-            // services.AddScoped<IUserService, UserService>();
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+            services.AddScoped<IUserService, UserService>();
             
             // Updating the middlewear to use versioning.
             // services.AddApiVersioning(opt => {
@@ -127,7 +129,7 @@ namespace AnimalShelter
             // });
 
             // custom jwt auth middleware
-            // app.UseMiddleware<JwtMiddleware>();
+            app.UseMiddleware<JwtMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {
