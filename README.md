@@ -125,7 +125,7 @@ https://localhost:5000/api/animals/1
 | :---: | :---: | :---: | :---: | --- |
 | name | string | none | true | Return matches by name.
 | species| string | none | true | Return search by species.
-| age | int | none | true | Return matches by age or  age range.
+| minumumAge | int | none | true | Return matches by minimum age.
 
 ## Example Query
 localhost:5000/api/animals?name=franny

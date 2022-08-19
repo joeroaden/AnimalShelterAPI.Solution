@@ -71,7 +71,7 @@ namespace AnimalShelter
                 {
                     Version = "v1",
                     Title = "AnimalShelter API",
-                    Description = "A simple example ASP.NET Core Web API",
+                    Description = "Locate, add, update or delete animals with this Animal Shelter ",
                     TermsOfService = new Uri("https://example.com/terms"),
                     Contact = new OpenApiContact
                     {
@@ -108,7 +108,7 @@ namespace AnimalShelter
             //specify the Swagger JSON endpoint.
             app.UseSwaggerUI(c => 
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My House Plant API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My AnimalShelter API V1");
                 c.RoutePrefix = string.Empty;
             });
 
